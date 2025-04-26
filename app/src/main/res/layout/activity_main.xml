@@ -22,44 +22,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.821" />
 
-    <Button
-        android:id="@+id/btnPause"
-        android:layout_width="140dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="Pause"
-        android:textColor="#086AB4"
-        android:textColorLink="#000000"
-        app:cornerRadius="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.732"
-        app:strokeColor="#086AB4"
-        app:strokeWidth="1dp" />
-
-    <Button
-        android:id="@+id/btnResume"
-        android:layout_width="140dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="Resume"
-        android:textColor="#086AB4"
-        android:textColorLink="#000000"
-        app:cornerRadius="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.732"
-        app:strokeColor="#086AB4"
-        app:strokeWidth="1dp" />
-
     <TextView
-        android:id="@+id/tvTime"
+        android:id="@+id/tvTaskTimeStartEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="04:52:28"
@@ -70,13 +34,13 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.622" />
+        app:layout_constraintVertical_bias="0.68" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start speaking..."
+        android:text="Share your plans..."
         android:textColor="#7C7C7C"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
