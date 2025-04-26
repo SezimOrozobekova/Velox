@@ -23,10 +23,19 @@
         android:theme="@style/Theme.Velox"
         tools:targetApi="31">
         <activity
-            android:name=".CreatedTaskAI"
+            android:name=".ProcessAudioRecord"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".CreatedTaskAI"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainRecordAudio"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
