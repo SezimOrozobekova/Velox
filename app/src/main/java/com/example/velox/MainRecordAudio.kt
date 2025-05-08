@@ -30,6 +30,7 @@ class MainRecordAudio : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -44,6 +45,9 @@ class MainRecordAudio : AppCompatActivity() {
         chronometer = findViewById(R.id.chronometer)
         progressBar = findViewById(R.id.progressBar3)
         progressBar.visibility = View.GONE
+
+
+
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
@@ -102,6 +106,7 @@ class MainRecordAudio : AppCompatActivity() {
                     Toast.makeText(this@MainRecordAudio, message, Toast.LENGTH_LONG).show()
     //                startListening()
                 }
+
 
             override fun onResults(results: Bundle?) {
                 val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)

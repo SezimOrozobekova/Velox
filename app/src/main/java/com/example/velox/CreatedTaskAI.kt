@@ -21,27 +21,14 @@ class CreatedTaskAI : AppCompatActivity() {
 
         val recycleView = findViewById<RecyclerView>(R.id.rvAiCreatedTask)
         recycleView.layoutManager = LinearLayoutManager(this)
-        // LinearLayoutManager ставит элементы линейно
-        // А this — это значит "используй текущий Context", то есть Activity или Fragment, где ты сейчас находишьс
 
-        // 1. Список задач
-        val taskList = listOf(
-            Task("Read Book", "Tuesday", "8:15 - 9:15 (1h 0m)", "Hobby"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Go Gym", "Wednesday", "10:00 - 11:00 (1h 0m)", "Sport"),
-            Task("Write Code", "Thursday", "12:00 - 14:00 (2h 0m)", "Work")
-        )
+        val task = intent.getSerializableExtra("task") as? Task
+        if (task != null) {
+            val taskList = listOf(task)
+            recycleView.adapter = AdapterCreatedTaskAI(taskList)
+        } else {
+            recycleView.adapter = AdapterCreatedTaskAI(emptyList())
+        }
 
-        // 2. Подключаем адаптер
-        recycleView.adapter = AdapterCreatedTaskAI(taskList)
     }
 }

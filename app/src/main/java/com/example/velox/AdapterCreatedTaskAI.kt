@@ -26,10 +26,17 @@ class AdapterCreatedTaskAI(private val taskList: List<Task>) : RecyclerView.Adap
     // 3. Заполняем данные в карточке
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val task = taskList[position]
-        holder.tvTaskName.text = task.name
+        holder.tvTaskName.text = task.title
         holder.tvTaskDate.text = task.date
-        holder.tvTaskTimeStartEnd.text = task.time
-        holder.tvHobbyType.text = task.type
+
+        if(task.time_start == "null" && task.time_end == "null"){
+            holder.tvTaskTimeStartEnd.text = ""
+        } else if(task.time_start != "null" && task.time_end == "null"){
+            holder.tvTaskTimeStartEnd.text = task.time_start
+        } else if(task.time_start != "null" && task.time_end != "null"){
+            holder.tvTaskTimeStartEnd.text = task.time_start + " - " + task.time_end
+        }
+
     }
 
     // 4. Сколько всего элементов в списке
